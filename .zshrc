@@ -26,11 +26,9 @@ source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 
 #Aliases
 alias ls="ls -la --color=auto"
-
+alias lsblk='lsblk -o NAME,SIZE,TYPE,FSTYPE,MOUNTPOINT,UUID'
+alias vim='nvim'
 #Exports
-export PATH="$HOME/.local/bin:$PATH"
-export GAMES_DIR="/mnt/sdb1/Games/legendary"
-export SASS=sassc
 
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
