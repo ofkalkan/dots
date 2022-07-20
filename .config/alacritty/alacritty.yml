@@ -16,9 +16,9 @@ window:
   startup_mode: Windowed
 
 # Scrolling
-scrolling:
-  history: 1000
-  multipler: 3
+#scrolling:
+  #history: 1000
+  #multipler: 3
 
 
 # Font conf
@@ -33,7 +33,7 @@ font:
     family: CaskaydiaCove Nerd Font Mono 
     style: Italic 
   
-  size: 10
+  size: 12
   offset:
     x: 0
     y: 0

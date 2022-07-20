@@ -1,0 +1,12 @@
+mode=drun
+height=440
+width=760
+#content_halign=center
+#location=8
+colors=colors
+prompt=Application 
+filter_rate=1
+dmenu-parse_action=true
+allow_images=true
+line_wrap=word_char
+term=alacritty

@@ -1,0 +1,158 @@
+* {
+    border: none;
+    border-radius: 0;
+    font-family: FiraCode Nerd Font, "Font Awesome 6 Free Regular";
+    font-size: 15px;
+    min-height: 0;
+    margin: 0 0px;
+}
+
+window#waybar {
+    background-color: #282828;
+    border-bottom: none;
+    color: #ebdbb2;
+    transition-property: background-color;
+    transition-duration: 0.5s;
+}
+
+#window {
+    background-color: #3c3836;
+    color: #edbbb2;
+    border-radius: 7.5 0 0 7.5px;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+#workspaces button {
+    background-color: #282828;
+    color: #ebdbb2;
+    border-radius: 7.5px;
+}
+
+/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
+#workspaces button:hover {
+    background: rgba(0, 0, 0, 0.2);
+    box-shadow: inherit;
+    border-bottom: none;
+    border-radius: 5px;
+}
+
+#workspaces button.focused {
+    background-color: #3c3836;
+    color: #edbbb2;
+    border-bottom: none;
+    border-radius: 7.5px;
+}
+
+#workspaces button.urgent {
+    background-color: #2c303c;
+}
+
+#mode {
+    background-color: #64727d;
+    border-bottom: 3px solid #ffffff;
+}
+
+#clock,
+#battery,
+#backlight,
+#network,
+#pulseaudio,
+#mode,
+#idle_inhibitor,
+#tray,
+#custom-sep,
+#mpd {
+    padding: 0 14px;
+    margin: 0 0px;
+    color: #ffffff;
+}
+
+#clock {
+    background-color: #3c3836;
+    color: #98971a;
+    margin-right: 10px;
+    border-radius: 0 7.5 7.5 0px;
+}
+
+
+#battery {
+    background-color: #3c3836;
+    color: #d79921;
+}
+
+#battery.charging {
+    color: #000000;
+    background-color: #ebdbb2;
+    border-radius: 7.5px;
+}
+
+@keyframes blink {
+    to {
+        background-color: #ebdbb2;
+        color: #282828;
+    }
+}
+
+#battery.critical:not(.charging) {
+    background-color: #282828;
+    color: #282828;
+    animation-name: blink;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+label:focus {
+    background-color: #000000;
+}
+
+#backlight {
+    background-color: #3c3836;
+    color: #edbbb2;
+}
+
+#network {
+    background-color: #3c3836;
+    color: #458588;
+    border-radius: 7.5 0 0 7.5px;
+}
+
+#network.disconnected {
+    background-color: #ebdbb2;
+}
+
+#pulseaudio {
+    color: #b16286;
+    background-color: #3c3836;
+}
+
+#pulseaudio.muted {
+    background-color: #3c3836;
+    color: #cc241d;
+}
+
+#idle_inhibitor {
+    /* background-color: rgba(0, 0, 0, 0); */
+    background-color: #3c3836;
+    color: #ebdbb2;
+}
+
+#idle_inhibitor.activated {
+    background-color: #3c3836;
+    color: #edbbb2;
+}
+
+#tray {
+    background-color: #3c3836;
+    color: #edbbb2;
+    border-radius: 0 7.5 7.5 0px;
+}
+#custom-sep {
+    background-color: #3c3836;
+    color: #edbbb2;
+    margin: -5px;
+} 

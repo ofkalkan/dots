@@ -19,12 +19,12 @@ set $term alacritty
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
 # set $menu dmenu_path | dmenu | xargs swaymsg exec --
-set $menu rofi -show drun
+set $menu wofi 
 
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+output * bg ~/Downloads/ismail-inceoglu-the-right-time.jpg fill
 #
 # Example configuration:
 #
@@ -147,7 +147,7 @@ output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
     # Switch the current container between different layout styles
     bindsym $mod+s layout stacking
     bindsym $mod+w layout tabbed
-    bindsym $mod+e layout toggle split
+    bindsym $mod+e layout toggle split 
 
     # Make the current focus fullscreen
     bindsym $mod+f fullscreen
@@ -196,36 +196,34 @@ mode "resize" {
     bindsym Escape mode "default"
 }
 bindsym $mod+r mode "resize"
+bindsym $mod+x border none 
+
+#--------------- CUSTOM BINDINGS ---------------------#
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
+bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
+bindsym XF86MonBrightnessUp exec brightnessctl set 5%+
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+#------------------------------------------------------#
 
 # Startup
 exec --no-startup-id /usr/lib/mate-polkit/polkit-mate-authentication-agent-1 &
-exec --no-startup-id /usr/bin/gnome-keyring-daemon --start --components ssh,pkcs11,secrets &
 
 # Added stuff
-smart_gaps on
-gaps inner 10
-gaps outer -10
-#gaps bottom 1
-gaps top 1
+default_border pixel 3 
+for_window [class = "Google-chrome"] border none
+# Input Settings
+#input click_method button_areas
 
-#
 # Status Bar:
-#
 # Read `man 5 sway-bar` for more information about this section.
 bar {
-    position top
-
-    # When the status_command prints a new line to stdout, swaybar updates.
-    # The default just shows the current date and time.
-    status_command while date +'%Y-%m-%d %I:%M:%S %p'; do sleep 1; done
-
-    colors {
-        statusline #ffffff
-        background #323232
-        inactive_workspace #32323200 #32323200 #5c5c5c
-    }
+    swaybar_command waybar
 }
 
-for_window [class = "Google-chrome"] border none
 
 include /etc/sway/config.d/*
