@@ -29,6 +29,7 @@ alias ls="ls -la --color=auto"
 alias lsblk='lsblk -o NAME,SIZE,TYPE,FSTYPE,MOUNTPOINT,UUID'
 alias vim='nvim'
 #Exports
+export PATH=$PATH:$HOME/.local/bin
 
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
